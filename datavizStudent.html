@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>What are the student features impacting on exam success ?</h1>
+									</header>
+									<p>For this school project we were asked to chose a dataset and work on it in a dataviz way. With my pair we chose to work on the exam success of student and we found one on Kaggle : <a href="https://www.kaggle.com/datasets/spscientist/students-performance-in-exams">https://www.kaggle.com/datasets/spscientist/students-performance-in-exams</a> : </p>
+									<span class="image main"><img src="images/Capture-dfstudent.PNG" alt="" style="height:80%; width:80%; margin-left: 100px;"/></span>
+									<p>
+										We can firstly see that there are two types of features : active, features which the individual as an impact on (lunch and test preparation), and passive, features that individuals can not change (gender, ethnicity and parental level of education). 
+										We will search which are the most impactful features, passives or actives ?
+									</p>
+									
+									<div>
+										<p style="padding-inline: 100px;">
+											Firstly we wanted to know if there is a correlation between every test success to concatenate them in one variable, so we plotted a Scatterplot from the Seaborn libraries :
+										</p>
+										<span class="image main"><img src="images/Capture-dfstudentscatter.PNG" alt=""
+												style="height:30%; width:30%; margin-left: 350px;" /></span>
+									</div>
+									<p>As the scatterplot shows us that there is a linear correlation between every tests, we decided to create a new column named grade_mean which is the mean of the three tests so that it will be more clear to analyze the exam success.
+									</p>
+									<span class="image main"><img src="images/Capture-dfstudentnew.PNG" alt=""
+											style="height:80%; width:80%; margin-left: 100px;" /></span>
+									<div style="height:250px">
+									<center>
+										<p style="font-family: Source Sans Pro"><b>We can now start exploring the dataset :</b></p>
+									</center>
+										<div style="float: right; margin-right:10px;">
+											<img src="images/Capture-dfstudentethnicity.PNG" alt="" height="220" style="padding-left: 30px; margin-right: 200px;" />
+										</div>
+										<p style="margin-left:150px"><br /><br/>It seems that there is a correlation between both of ethnicity and gender with high grade obtaining.</p>
+									</div>
+									<span class="image main"><img src="images/Capture-DVbegin.PNG" alt=""
+											style="height:80%; width:80%; margin-left: 100px; margin-top: 80px;" /></span>
+									<p>By plotting the grade average by lunch type and by the exam preparation, it seems that there is also a positive correlation with the exam success. But even though these features seems to improve the exam success chances, we do not know which one is the most impactful.<br/>
+									Indeed, we need to thin about a testimony of exam success. In that way, we wanted to study the density of the grade average :
+									</p>
+									<div style="height:300px">
+										<div style="float: left; margin-right:10px;">
+											<img src="images/output.png" alt="" style="height:60%; width:60%; margin-left: 200px;" />
+										</div>
+										<p style="margin-right:150px"><br/>By taking this grade average density we set that students with a higher than 80 grade average are considered as high graded students.<br/> 
+										</p>
+									</div>
+									<center><p>So to study high graded students we create a new data frame exclusively composed of students with a higher grade average
+									than 80. <br/> Then we plot the same previous features plots applied on the best graded data frame :</p>
+									<span class="image main"><img src="images/output-80rated.png" alt=""
+											style="height:50%; width:50%; margin-left: 100px;" /></span>
+									<p style="margin-inline: 100px;"> At this point we have an interesting vision about the features repartition inside the best graded population. But we need to compare it to the total population to highlight the changes.
+									<span class="image main"><img src="images/output-finalcomp.png" alt=""
+											style="height:50%; width:50%; margin-left: 100px;" /></span>
+									</center>
+									<p>This final graph shows us interesting and surprising things :<br/><br/>
+										- Ethnicity :
+										We can see that the group E and C are more represented in the 80+ rated club than in the total population, while group A
+										and B decreased. Group D is more or less the same. Indeed, the ethnicity seems to have a effective impact on the exam
+										success.
+										<br/><br/>
+										- Parental level of education :
+										We can see that students who have master graduated parents are less represented in the best grades group, while students
+										having parents who stopped there studies after high school are much more represented than in the total population.
+										<br/><br/>
+										- Lunch :
+										Students who had a standard lunch before the exam are less represented in the best grades group. Even if we proved
+										previously that having a lunch is helping to have a better grade.
+										<br/><br/>
+										- Test preparation course :
+										Obviously, the students who had taken test preparation course are more represented in the best grades group.
+										<br/><br/>
+										
+										To conclude we can say that the test preparation course got the biggest impact on the exam result. The other aspects can
+										admit hypothesis : the best students may also be the most stressed by the exam, which can conduct to not eat; and if the
+										ethnicity groups concern the wealth categories it can explain that the poorer groups can not afford test preparation.
+									</p>	
+									
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

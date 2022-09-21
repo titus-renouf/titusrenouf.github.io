@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Magic : Mobile App</h1>
+									</header>
+									<p>Magiq is a website developed by Bluescale allowing the company to list the different
+									projects carried out by its consultants. It allows the follow-up of the company's time, that is to say the follow-up
+									of the exercise of each of the consultants since they are required to work on several projects
+									in parallel. Indeed, the employee can connect to his personal space in order to specify the days when
+									he worked on such a project. The usefulness of this site is great for consulting companies because it allows
+									monitor the activity of its consultants and therefore optimize their offer to their clients.</p>
+									<center>
+										<img src="images/Magiq1.png" alt="" style="height:300px; margin-right:30px"/>	
+										<p style="margin-bottom:50px">The goal of this project is to make the monitoring simpler by using the phone.</p>
+									</center>	
+									
+									<p style="margin-top:80px">
+										<b style="margin-left:20px">The API connecting :</b><br/>
+											The Magiq mobile application has a particularity: it is the extension of the website of the same name. Thereby,
+											the main difficulty of this project is to link the application with the website, and this is
+											possible through API requests. An API (Application Programming Interface) is an interface
+											allowing software to offer its services to other software.
+									</p>
+									<p>
+										However, it is difficult to ensure the validity of our query functions. An additional tool
+										was therefore used to ensure the proper functioning of API requests, it is Postman, a
+										software to simulate them.
+										Below is a demonstration of the use of the Postman software: we are trying to access the sheets
+										time of Bernard Giraud.
+									</p>
+									<center>
+										<img src="images/MagiqPostman.png" alt="" style="height:300px; margin-right:30px" />
+										<p style="margin-bottom:50px">To retrieve Bernard Giraud's timesheets, you must first enter the URL
+										corresponding to the page listing the time sheets on the website. We use the GET method
+										 because we want to retrieve information from this page. In the URL, the mention "current user" tells us that access
+										to the information is protected, so you must enter the token retrieved
+										previously as a “Bearer Token”. If the token is not filled in, the software will return
+										a blank page indicating that the URL is valid, but will display the message "401 Unauthorized"
+										prohibiting access to data. If all the conditions are met, by clicking on "Send" the
+										software will return the requested object: the list of timesheet details.
+										Thanks to the recovery of these details and the corresponding names, we will be able to reuse them
+										in our app.</p>
+									</center>
+									<center>
+										<img src="images/Capture-webdevAPI.PNG" alt="" style="height:300px;" />
+										<p style="margin-bottom:50px">By having simulated the request thanks to the Postman software, we are then able to set it up in
+										the code of the mobile application. The "username" and "password" parameters will correspond to the
+										body which will be sent in the authentication page of the site thanks to the POST method and through
+										the URL. Thanks to this function, the user will be able to connect to his user space on the application.
+										API calls having an essential place for the development of the application, we will use the
+										Postman software throughout the development period.</p>
+									</center>
+									<p style="margin-top:80px">
+										<b style="margin-left:20px">The App Simulation :</b><br />
+										It is important to note that the following presentation corresponds to the beta version of
+										the app. Indeed, it is not fully completed and has not followed its verification tests
+										final, nevertheless we find the main functionalities.
+									</p>
+									<center>
+										<img src="images/Magiq2.png" alt="" style="height:300px; margin-right:30px" />
+										<p style="margin-bottom:50px">The left page corresponds to the home page of the application, it allows you to enter the name of
+										the company to which the employee belongs in place of the shaded word "organisation". By then pressing
+										on the “Validé” button, the connection page is displayed (right page). The company logo
+										appears above the authentication fields. The Cogirep logo on the image corresponds to a
+										fictitious company used so as not to disrupt the integrity of Bluescale's Magiq account.
+										It is possible to retrieve your password if you forget it by clicking on the "Mot de passe oublié" button.</p>
+									</center>
+									<center>
+										<img src="images/Magiq3.png" alt="" style="height:300px; " />
+										<p style="margin-bottom:50px">Once the authentication is successful, the user finds himself on the left page named "Mes Feuilles de Temps". We
+										finds the same functionalities: the month and the year, the number of days selected, the
+										percentage of days selected compared to the number of days available and finally the status of the
+										timesheet.
+										Two other pages are also accessible through the navigation bar at the bottom of the screen.
+										The central page corresponds to the days off to come and past. In this case, a leave of one
+										half-day dated November 17, 2021 has been accepted by the company's administration.
+										The application is able to store this leave authorization as an upcoming or past event.
+										Finally, the right page allows the user, in this case Bernard Giraud, to disconnect from
+										the app.</p>
+									</center>
+									<center>
+										<img src="images/Magiq4.png" alt="" style="height:300px; " />
+										<p style="margin-bottom:50px">By pressing on a month in the list on the “Mes Feuilles de Temps” page, the user finds himself on
+										this page called for this beta version "Timesheet". It corresponds to the second page of the
+										model of part 3.1.1. Note that on the left page the sheet is blank, it has been
+										then filled in as shown on page 2: by selecting the “0”, “0.5 or “1” buttons.
+										By clicking on the “Sauvegarder” button, the application takes into account the
+										changes in the timesheet. Returning to the “Mes Feuilles de Temps” page, we notice
+										that the element October 2021 has updated: there are now 5.5 working days selected, which
+										correspond to 26% of the available days, the status of the timesheet is still "Brouillon".</p>
+									</center>
+									<center>
+										<img src="images/Magiq5.png" alt="" style="height:300px;" />
+										<p style="margin-bottom:50px">Returning to our October 2021 timesheet, the left page is displayed as it was
+										modified. By clicking on the “Nom Projet: …” box, a pop-up window appears. It displays the list
+										current projects to which the user is assigned. By selecting the other project, “Assistance
+										VAR”, the pop-up window disappears and gives way to the updated timesheet. The name of the project is
+										became the selected one and the amount of work per day counters were reset to zero.
+										Nevertheless the pellets kept their shape, but still changed color to indicate
+										that these days have been selected for another project, in this case it is the project
+										Development of a bubble management application. It is now possible to fill in the
+										empty spaces for the "Assistance VAR" project.</p>
+									</center>
+									<center>
+										<img src="images/Magiq6.png" alt="" style="height:300px;" />
+										<p style="margin-bottom:50px">After selecting other working days for the "Assistance VAR" project, we test another
+										feature: unlocking days off. By clicking on the “…” icon, a new pop-up window appears with the mention “Déverrouiller”. By
+										clicking on it on off days (weekends, public holidays
+										and holidays) that were grayed out are no longer grayed out. It is now possible to select them as
+										working day. By clicking again on the “…” icon, you can now select the button
+										“Verrouiller ” which will now lock off days.
+										By saving our timesheet and returning to the main page, we realize that the
+										changes made have been taken into account by the indicators.</p>
+									</center>
+									<center>
+										<img src="images/Magiq7.png" alt="" style="height:300px;" />
+										<p style="margin-bottom:50px">Once the user has filled all of his working time for the month of October 2021, he must
+										validate their timesheet. To do this, click on the "Validé" button, a new pop-up window appears to ensure that it is
+										not a bad manipulation. Indeed, once
+										validated the time sheet cannot be modified. If the user validates his choice, the pop-up
+										disappears and returning to the main page we notice that the status of the October timesheet
+										2021 has been updated to "Validé".</p>
+									</center>
+									<p>
+										This beta version therefore includes the expected functionalities but still lacks fluidity. Moreover, there are some issues to improve. For example the fact that the list of timesheets does not arrive
+										completely sorted in chronological order, or even when the user
+										would like to check off half a day. Indeed, if there is already an orange half-disc, instead of the
+										complete and thus have a two-color circle, the half-pad will simply change color.
+										Nevertheless the application will still understand that in this day there is a half-day of
+										work assigned to one project and the other half to another project, this is only a display issue. We
+										should also replace the title of the “Timesheet” page with the title of the timesheet,
+										“Octobre 2021” for example.
+									</p>
+								</div>
+								
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

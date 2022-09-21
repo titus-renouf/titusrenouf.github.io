@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Datasets Cleaning</h1>
+									</header>
+									<span class="image main"><img src="images/Capture-clean.PNG" alt=""/></span>
+									<p>We are creating methods to transform data, and we are applying them or not on the dataset columns. To be able to be fast in optimizing the datasets we are using the Python libraries Pandas and NumPy. Indeed they enable us to perform methods without using loops on every dataset row. <br/>As an example, we will see how we optimized the Age column of our table:<br/></p>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px;">
+											<img src="images/Capture-formatdate.PNG" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p><br />The main function that will help us optimize the Age column is the format_age. This function is calling others that we built for every little actions. In this way, when we will need to optimize other columns we could call them too.</p>
+									</div>
+									<center><p style="font-family: Source Sans Pro"><b>Let's decompose it :</b></p></center>
+									<div style="height:250px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/Capture-nonfloat.PNG" alt="" height="200" style="padding-right: 30px;" />
+										</div>
+										<p> </br> <br/> This function transforms non-numerical values into null. We will apply it on the age, zipcode and the price columns.</p>	
+									</div>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px">
+											<img src="images/Capture-mvstrtofloat.PNG" alt="" height="180" style="padding-left: 30px;" />
+										</div>
+										<p><br />Here we are moving string values into float. Since we previously set non float values as null, we needed to set all the targeted data as string before. So we will apply this function on the age and the price columns (zipcode is not a float value) to set them back to numerical values.</p>
+									</div>
+									<div style="height:180px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/Capture-roundit.PNG" alt="" height="110" style="padding-right: 30px;" />
+										</div>
+										<p> <br /> This function enable us to round float except for null values. Then, we also created the round_it_as_int() function to transform the float values into integer.</p>
+									</div>
+									<div >
+										<div style="margin-left: 200px; margin-bottom: 30px;">
+											<p style="margin-left:100px"><b>By applying the format_age function on the Age columns we obtain:</b></p>
+											<img src="images/Capture-agebeforeafter.PNG" alt="" height="300" />	
+										</div>
+										
+									</div>
+									<p>To transform the other columns we will create a format_...() function for each dataset variables, and will construct it with the kind of little methods we saw previously. The zipcode column will not need the move_str_to_float() method whereas it will need a method which forced values to be 5 characters long. For the date column we need to transform the format as a unique one. The price is quite the same as the age but does not need to round the values. And finally, we will create two other columns to clear the GPS column.</p>
+															
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

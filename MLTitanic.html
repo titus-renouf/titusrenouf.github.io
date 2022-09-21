@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Titanic Prediction</h1>
+									</header>
+									<p>In this challenge, we have to build a predictive model that answers the question: “what sorts of people were
+										more
+										likely to survive?” using passenger data (ie name, age, gender, socio-economic class, etc)<br />
+										We are using Python libraries : Pandas, NumPy, Sklearn, and apply Linear Regression and Random Forest.
+									</p>
+									<center>
+										<span class="image main"><img src="images/Capture-titanic.PNG" alt="" style="height:80%; width:80%"/></span>
+									</center>
+									<p>
+										Overview of the data:
+										<br/>
+										- PassengerId is the unique id of the row and it doesn't have any effect on target
+										<br />
+										- Survived is the target variable we are trying to predict (0 or 1):
+											- 1 = Survived
+											- 0 = Not Survived
+										<br />
+											- Pclass (Passenger Class) is the socio-economic status of the passenger and it is a categorical ordinal feature which
+										has 3 unique values (1, 2 or 3):
+											 1 = Upper Class,
+											 2 = Middle Class,
+											 3 = Lower Class.
+										<br />
+										- Name, Sex and Age are self-explanatory
+										<br />
+										- SibSp is the total number of the passengers' siblings and spouse
+										<br />
+										- Parch is the total number of the passengers' parents and children
+										<br />
+										- Ticket is the ticket number of the passenger
+										<br />
+										- Fare is the passenger fare
+										<br />
+										- Cabin is the cabin number of the passenger
+										<br />
+										- Embarked is port of embarkation and it is a categorical feature which has 3 unique values (C, Q or S)
+										: C = Cherbourg,
+											Q = Queenstown,
+											S = Southampton.
+									</p>
+									
+									<center><p style="font-family: Source Sans Pro"><b>Let's explore it :</b></p></center>
+									<div style="height:350px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/outpu-titanic.png" alt="" height="300" style="padding-right: 30px; margin-left: 80px;" />
+										</div>
+										<p> </br> <br/> We can see that there is a lot more victims from the 3rd class.
+										(This graph is not well formatted : The class (1,2 or 3) needs to be taken as a categorical variable, not as a numerical
+										one.)</p>	
+									</div>
+									<div style="height:200px">
+										<div style="float: right; margin-right:10px">
+											<img src="images/Capture-MLmodel1.PNG" alt="" height="150" style="padding-left: 30px;" />
+										</div>
+										<p style="margin-left:80px"><br />We create a method to build a new data frame in order to test it.</p>
+									</div>
+									<div style="height:250px">
+										<div style="float:left; margin-left: 100px;">
+											<center>
+												<p>We obtain :<br/><img src="images/Capture-PClass.PNG" alt="" height="150" /></p>
+											</center>
+										</div>
+										<div style="float:right; margin-right:100px">
+											<center>
+												<p style="margin-bottom:50px">With a score of :<br/><img src="images/Capture-PClassscore.PNG" alt="" height="110" style="margin-top:20px" /></p>
+											</center>
+											
+										</div>
+									</div>
+									<div style="height:350px">
+										<div style="float: left; margin-left:50px;">
+											<img src="images/Capture-MLmodel1weigth.PNG" alt="" height="300" style="padding-right: 30px;" />
+										</div>
+										<p> We plotted the features weights in case of Logistic Regression.
+										<br/>Interpretation of weights in Linear Models :
+										
+										<br/>
+										- A positive weight increases the probability of target = 1 (survived)
+										<br/>
+										- A negative weight decreases the probability of surviving.
+										<br/>
+										- When a weight is close to zero, it means that the correspond feature doesn't influence the prediction.
+										<br/>
+										Conclusion for our model: 
+										<br/>
+										Pclass_1 and Pclass_3 seem very important in our model in comparison to Pclass_2. It shows also that Fare is not
+										important for our prediction using a linear model.
+										
+										<br>
+										</p>
+									</div>
+									<center>
+										<p>
+											<b>Let's continue with other variables...</b>
+										</p>
+										<img src="images/Capture-relativedistribAge.PNG" alt="" height="300"/>
+										<p>It seems that the age has an impact on the surviving chance.</p>
+									</center>
+									<div style="height:350px">
+										<div style="float: right; margin-right:10px">
+											<img src="images/Capture-MLTitanicmalefemale.PNG" alt="" height="300" style="margin-right:60px; margin-left: 30px" />
+										</div>
+										<p style="margin-left:80px;"><br />By applying the same strategy on age and sex a problem appeared : the age weight is null, whereas by plotting a simple histogram of the surviving chance by age it seems to have an impact.
+										<br/> What we just did with the new feature is_child is add non-linearity that a linear model like Logistic Regression can't
+										capture without our help.
+										</p>
+									</div>
+									<div style="height:380px">
+										<center>
+											<img src="images/Capture-RFage.PNG" alt="" height="300" />
+											<p>
+												By using Random Forest we obtain the real weight of the age on the surviving chance.
+											</p>	
+										</center>
+									</div>
+									<center><p><b>Then we studied the fare price and the embarked gate :</b></p></center>
+									<div style="height:280px">
+										<div style="float:left; margin-left:100px">
+											<img src="images/Capture-MLTitanicLRembarked.PNG" alt="" height="230" />
+										</div>
+										<div style="float:right; margin-right:100px">
+											<img src="images/Capture-MLTitanicRFembarked.PNG" alt="" height="230" />
+										</div>
+										
+									</div>
+									<p>
+										By ploting histplots on Fare and Embarked feature for the survival chances we see that it seems to have an impact on
+										it.
+										Firstly, we compute a Logistic Regression :
+										With this logistic regression we can see that the embarked gate has an impact on the survival chance.
+										Then, contrary to what we have seen at the beginning of the lab (1st features importance plot), it seems that the
+										Fare
+										as an impact on the survival chance : the higher prices have higher chance to survive. But the cheap fares is also
+										positive wich is strange.
+										So we decided to compute a Random Forest :
+										This Random Forest finally tells us that the most impacting feature is the fare price.
+									</p>
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
