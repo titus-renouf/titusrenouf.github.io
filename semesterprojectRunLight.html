@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Semester Project : Prediction of Ground Reaction</h1>
+									</header>
+									<p>This project started with the observation that running performances nowadays are made using stance force platforms which are very expensive. So, it's hard to study it in real conditions because to create a 10 meters line it cost 100 000€, so I let you imagine what it corresponds to study the performance of a marathon athlete.
+										<br/>The solution chosen by the researchers is to try to predict the stance force values using the acceleration data of tibias and lumbars. So, our role is to use the dataset composed of the acceleration in x, y and z of tibias and lumbars and to predict the z value of a stance force platform.
+									</p>
+									<div style="height:350px">
+										<div style="float: right; margin-right:30px;">
+											<img src="images/outputRunlight.png" alt="" height="300" style="padding-left: 30px;" />
+										</div>
+										<p><br />This is the graph reporting the z value of ground reaction during one passage over a stance force platform.<br/>
+										All the ground reaction value during a running effort get the same graph shape.<br/>
+										The experiment made is concerning 100 tries of a single individual for the first dataset (5000 rows per try)<br/>
+										And then 10 individuals made 10 tries each to create the second dataset (5000 rows per try too).</p>
+									</div>
+									
+									<div style="height:350px">
+											<center><img src="images/RunLightMLmodel.png" alt="" height="250" />
+											<p>The experimental methodology is to create combinations of lumbar and tibias features to approach the original stance force platform values<br/>
+											We have two success criterias : our model should have an accuracy over 99% and a mean squared error less under</p>
+											</center>
+									</div>
+									<div style="height:450px">
+										<center>
+											<p>
+												<b>
+													This project is confidential, so I am not allowed to publish any line of code. There is our conclusions :
+												</b>
+											</p>
+											<p>
+											We finally achieve our expectations by creating a model based on the LightGBM Regressor from the Python SKLearn library.
+											With this model we reach the success criterias with an accuracy of 99.3% and a mean squared error of 44.68N. By running our model we obtain the folowing graph.
+										</p>
+										<img src="images/RunLightFinalPerf.png" alt="" height="250" />
+										<p>
+											We now need to write an user manual and the documentation of our work to explain our evolution process, so that our work can be reusable.
+										</p>
+										</center>
+										
+									</div>
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

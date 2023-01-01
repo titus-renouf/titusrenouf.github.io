@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Google Cloud Platform</h1>
+									</header>
+									<span class="image main"><img src="images/EcranAccueilCloudStorage.png" alt=""/></span>
+									<p>This is my Cloud Storage page. Here you can see folders named "buckets". Each bucket corresponds to a storage location where you can upload some data. The goal of this project is to upload a dataset in the "bronze-titus" bucket, then to clean it into the "silver-titus" bucket using Cloud Function to be able to upload it into Google BigQuery.</p>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px;">
+											<img src="images/BucketBronzeTitus.png" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p><br />This is the bronze-titus bucket page, where you can find the bucket configuration. As I am located in France I chose to set the zone to europe-west to respect the RGPD obligations. By using a Cloud Function I uploaded two versions of a dataset about data scrapping on anime series, one in CSV and an other one in JSON.</p>
+									</div>
+									
+									<div style="height:250px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/BucketSilver.png" alt="" height="200" style="padding-right: 30px;" />
+										</div>
+										<p> <br/>This is an other bucket page where you can see a file called "First_cleaned_version.json" corresponding to the JSON of my bucket "bronze-titus" that I have cleaned using Cloud Function again.</p>	
+									</div>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px">
+											<img src="images/CloudFunctions.png" alt="" height="180" style="padding-left: 30px;" />
+										</div>
+										<p><br />This is the list of our Cloud Functions corresponding to the specific project. I chose to trigger them using a HTTP request to facilitate the test phase, but it could be interesting in our case to set event triggers.</p>
+									</div>
+									<div style="height:250px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/CloudFunctionbronzetosilver.png" alt="" height="200" style="padding-right: 30px;" />
+										</div>
+										<p> <br /> This is the deployment history of our cleaning function. We can see that a column vote has been well created, such as the rest of the cleaning (rank format, rating format, number of episodes, ...).</p>
+									</div>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px">
+											<img src="images/BigQuery.png" alt="" height="220" style="padding-left: 30px;" />
+										</div>
+										<p><br />This is the BigQuery page where we succeed to import our cleaned version of the dataset. So now we are able to create requests in order to answer some asked questions.</p>
+									</div>
+									<p>I will probably start again this project to improve my cloud functions and then pursue it till the creation of a Business Intelligence tool, but it is quite enough for a first familiarization with this new technology. </p>
+															
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

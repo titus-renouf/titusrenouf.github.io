@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Neuronal Network to predict Colorectal Histology</h1>
+									</header>
+									<center><img src="images/colorectalhistology.png" alt="" height="400" width="auto"/></center>
+									<p>These images correspond to examples of the dataset with their corresponding label. As you may see their is a label "Tumor", indeed our prediction model could permit to detect cancer. The experimental methodology is incremental: starting from the simplest Neuronal Network, I am trying to improve it by adding layers. </p>
+									<p>We have to split the train dataframe and the validation dataframe to develop a model
+									using train and prevent overfiting using validation. I arbitrary chose a split of 80%.
+									Then I decided to resize the images format as 50x50x3 to improve the compilation time. I also set the batch size at 16
+									arbitrary.</p>
+									<div style="height:250px">
+										<div style="float: right; margin-right:10px;">
+											<img src="images/NNfirstmodel.png" alt="" height="180" style="padding-left: 30px;" />
+										</div>
+										<p>This is my first model, composed of a Flatten Layer to reshape the dataset elements in one dimension (50x50x3=7500), and
+										two Dense layers. The first one with a ReLu activation which is the simplest activation function and I arbitrary chose
+										to set the units at 128. The second one got a softmax activation to return a probability vector, and the units parameter is set to 8 as our classification is concerning 8 different labels.</p>
+									</div>
+									
+									<div style="height:350px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/NNfirstmodelgraph.png" alt="" height="250" style="padding-right: 30px;" />
+										</div>
+										<p> <br/>I chose to set the epochs number at 10 to get running time relatively short. We can observe on these graphs that the
+										accuracy is about 70% and we got a lot of overfitting because the validation curve is quite different from the train one.</p>	
+									</div>
+									<div style="height:250px">
+										<div style="float: right; margin-right:20px">
+											<img src="images/NNsecondmodel.png" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p><br />I decided to improve our previous model by adding four Convolution 2D layers with ReLu activation and chose arbitrary
+										their parameters. In fact, the Convolution2D layers create a convolution kernel that is convolved
+										with the layer input to produce a tensor of outputs.</p>
+									</div>
+									<div style="height:350px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/NNsecondmodelgraph.png" alt="" height="250" style="padding-right: 30px;" />
+										</div>
+										<p> <br />We notice that the accuracy is much better and that this model overfits less
+										than the previous one. I am now looking to reduce the overfitting as much as
+										possible and increase the accuracy of the model again.</p>
+									</div>
+		
+									<div style="height:250px">
+										<div style="float: right; margin-right:20px">
+											<img src="images/NNthirdmodel.png" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p>In this third model I chose to add a Batch Normalization layer because I learnt that this layer type can significantly
+										improve the prediction by normalizing the individuals features. I also add a Dropout layer because it permits to prevent
+										overfitting by randomly drop neurons.</p>
+									</div>
+									<div style="height:350px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/NNthirdmodelgraph.png" alt="" height="250" style="padding-right: 30px;" />
+										</div>
+										<p><br/><br/> The accuracy is improved but there is still a lot of overfitting as you may see the difference between both of the curves </p>
+									</div>
+									<div style="height:250px">
+										<div style="float: right; margin-right:20px">
+											<img src="images/NNfourthmodel.png" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p>I tried to replace the BatchNormalization layer by a LayerNormalization layer. In fact such as the BatchNormalization layer</p>
+									</div>
+									<div style="height:300px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/NNfourthmodelgraph.png" alt="" height="250" style="padding-right: 30px;" />
+										</div>
+										<p><br />Now our model got an accuracy above 90% and a loss very low. The model is still a little bit overfitting but it is
+										sufficient to be usable. The accuracy could be improve by upgrading the number of epochs for example.</p>
+									</div>
+															
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

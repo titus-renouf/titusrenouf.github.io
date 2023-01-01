@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>Working with an API with good practices</h1>
+									</header>
+									<p>The goal of the project is to develop a tool ready to be used in production. We are working with the imdb API which is composed of many movie reviews. Our task is to develop the back-end app with three success criteria : 
+										<br/> - The first page should be a list of the movie poster and name.
+										<br/> - On the first page we want to display a Navigation Box to search for movies by title. Then, the app is displaying the results.
+										<br/> - When selecting a movie its review is displayed.
+									</p>
+									
+									<div style="height:250px">
+										<div style="float: left; margin-left:100px;">
+											<img src="images/imdb-API-requests-packages.png" alt="" height="200" style="padding-right: 30px;" />
+										</div>
+										<p><br/>The good practice is to create a python package for each request function, and then calling them in our program. Indeed we have created 5 requests functions and 1 file containing our API token. We are using it like that for the local development but we obviously should hide it as .env variable for the deployment. 
+										We are testing our code with a Notebook, so the following presentation is about my notebook results.</p>
+									</div>
+									<div style="height:280px">
+										<div style="float: left;">
+											<img src="images/imdb-TopMovies-code.png" alt="" height="250" style="padding-right: 30px;" />
+										</div>
+											<img src="images/imdb-TopMovies-result.png" alt="" height="250" style="padding-right: 30px;" />
+									</div>
+									<center>
+										<p style="margin-bottom:50px">The get_top_movies function generates the names and posters of the current top movies. This corresponds to our main page. </p>
+									</center>	
+									<div style="height:380px">
+										<div style="float: left;">
+											<img src="images/imdb-SearchMovies-code.png" alt="" height="360" style="padding-right: 30px;" />
+										</div>
+										<img src="images/imdb-SearchMovies-result.png" alt="" height="330" style="padding-right: 30px;" />
+									</div>
+									<center>
+										<p style="margin-bottom:50px">The SearchMovies function is displaying a list of films corresponding to a research, here I am looking for films related to "Inception". 
+											<br/>For this new page I chose to display the name, poster, description and rate of the movie. <br/>To get the movie rate I have imported the get_movie_rate function from the MovieRate package.</p>
+									</center>
+									<div style="height:380px">
+										<div style="float: left;">
+											<img src="images/imdb-MovieReview-code.png" alt="" height="360" style="padding-right: 30px;" />
+										</div>
+										<img src="images/imdb-MovieReview-result.png" alt="" height="250" style="padding-right: 30px;" />
+									</div>
+									<center>
+										<p style="margin-bottom:50px">The get_movie_review function displays a new page corresponding to the movie review where I chose to show the title, poster, release date, plot, runtime, directors, actors, trailer video and rate.
+											Like for the previous function I used the get_movie_rate from the MovieRate package, but here I also used the get_movie_trailer function from the MovieTrailer package.
+									</center>
+								
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
