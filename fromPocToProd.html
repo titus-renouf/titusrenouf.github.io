@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<link rel="icon" type="image/png" sizes="16x16"
+		href="https://cdn.pixabay.com/photo/2021/01/30/12/06/icon-5963629_1280.png">
+		<title>Titus Renouf's Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major" style="align-items:center">
+										<h1>From Poc To Prod</h1>
+									</header>
+									<p>The From Poc to Prod project is a big step in a more professional way of working. Until now, most of the time we have learnt to develop code using Python Notebooks so that we could have a step-by-step study on our code performances. For this project I am using the unittest library to test my python files, calling our code in testing files with a chosen environment configured in a yaml file.
+										<br/> We are here producing a Deep Learning Model which is supposed to make predictions.
+									</p>
+									<div style="height:250px;">
+										<div style="float: right; margin-right:100px;">
+											<img src="images/frompoctoprod-yaml.png" alt="" height="200" style="padding-left: 30px;" />
+										</div>
+										<p style="margin-left:100px"><br />This is our environment file where we can configure the libraries and dependencies desired in our production environment.</p>
+									</div>
+									
+									<div style="height:200px">
+										<div style="float: left; margin-left:150px;">
+											<img src="images/frompoctoprod-preprocess.png" alt="" height="150" style="padding-right: 30px;" />
+										</div>
+										<p style="margin-right: 100px;"> <br/>The first part of our project is to preprocess our data. The test_utils.py file will test the utils.py file.</p>	
+									</div>
+									<div style="height:350px">
+										<center>
+										<img src="images/frompoctoprod-preprocess-utils.png" alt="" height="200"" />
+										<p ">This function has been coded to get the current train batch, it is located in the utils.py file.
+										<br/>What is a batch ?
+										Think of a batch as a for-loop iterating over one or more samples and making predictions. At the end of the batch, the
+										predictions are compared to the expected output variables and an error is calculated. From this error, the update
+										algorithm is used to improve the model.</p>	
+										</center>
+										
+
+									</div>
+									<div style="height:250px">
+										<div style="float: left; margin-left:10px;">
+											<img src="images/frompoctoprod-preprocess-test-utils.png" alt="" height="200" style="padding-right: 30px;" />
+										</div>
+										<p>This is a test function located in the test_utils.py file. We can run the test function alone as a debugger, or we can run the entire file composed of multiple tests. Then, the logs will return an answer "OK" if the test is passed, or an error with specifications if not.
+										In those test functions we are mocking chosen values to assert with our code result.</p>
+									</div>
+									
+									<p>I will probably start again this project to improve my cloud functions and then pursue it till the creation of a Business Intelligence tool, but it is quite enough for a first familiarization with this new technology. </p>
+									<div style="height:750px">
+									<center>
+										<p><b>Running a test function alone :</b></p>
+										<img src="images/frompoctoprod-preprocess-unittest-1.png" alt="" height="200" style="margin-bottom: 30px;"/>
+										<p><b>Running the entire test file :</b></p>
+										<img src="images/frompoctoprod-preprocess-unittest-multi.png" alt="" height="250" style="margin-bottom: 20px;"/>
+										<p style="margin-bottom: 50px;"> At this point, all the preprocessing phase has passed the unittest successfully. So, we can be sure that the preprocessing part can be sent in production. 
+										Now, we can move to the unittest of the train phase to test if the model is well running. Then, the predict phase will be our final asset, after being sure that our model is working, but it is a non-sense to apply unittest on a prediction as it is a different prediction every time we run it.</p>																		
+									</center>	
+									</div>
+									
+								</div>
+							</section>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
